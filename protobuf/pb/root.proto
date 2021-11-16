@@ -1,0 +1,55 @@
+// Protobuf schema for Nest Observe and Nest BatchUpdateState API calls
+
+syntax = "proto3";
+
+import "nest/trait/hvac.proto";
+import "nest/trait/sensor.proto";
+import "nest/trait/structure.proto";
+import "weave/trait/peerdevices.proto";
+import "nest/trait/located.proto";
+import "weave/trait/description.proto";
+import "nest/trait/user.proto";
+import "weave/trait/heartbeat.proto";
+import "weave/common.proto";
+import "weave/trait/security.proto";
+import "weave/trait/power.proto";
+import "nest/trait/security.proto";
+import "nest/trait/detector.proto";
+import "nest/messages.proto";
+import "nestlabs/gateway/v1.proto";
+import "rpc.proto";
+
+import "google/protobuf/any.proto";
+
+package nest.rpc;
+
+message ObjectIdPair {
+  string id = 1;
+  string key = 2;
+  string uuid = 3;
+}
+
+message DynamicProp_Indirect {
+  google.protobuf.Any property = 1;
+}
+
+message TraitGetProperty {
+  ObjectIdPair object = 1;
+  DynamicProp_Indirect data = 3;
+}
+
+message TraitSetProperty {
+  ObjectIdPair object = 1;
+  google.protobuf.Any property = 2;
+}
+
+message NestMessage {
+  repeated TraitSetProperty set = 1;
+  repeated TraitGetProperty get = 3;
+}
+
+message StreamBody {
+  repeated NestMessage message = 1;
+  Status status = 2;
+  repeated bytes noop = 15;
+}

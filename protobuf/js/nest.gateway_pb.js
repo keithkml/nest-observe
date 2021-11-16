@@ -1,11 +1,15 @@
+// source: nest.gateway.proto
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {missingRequire} reports error on implicit type usages.
  * @suppress {messageConventions} JS Compiler reports an error if a variable or
  *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
+/* eslint-disable */
+// @ts-nocheck
 
 var jspb = require('google-protobuf');
 var goog = jspb;
@@ -405,8 +409,10 @@ proto.nestlabs.gateway.v2.ObserveRequest.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {!Array<number>} */ (reader.readPackedInt32());
-      msg.setStateTypesListList(value);
+      var values = /** @type {!Array<number>} */ (reader.isDelimited() ? reader.readPackedInt32() : [reader.readInt32()]);
+      for (var i = 0; i < values.length; i++) {
+        msg.addStateTypesList(values[i]);
+      }
       break;
     case 3:
       var value = new proto.nestlabs.gateway.v2.TraitTypeObserveParams;
@@ -493,26 +499,31 @@ proto.nestlabs.gateway.v2.ObserveRequest.prototype.getStateTypesListList = funct
 };
 
 
-/** @param {!Array<number>} value */
+/**
+ * @param {!Array<number>} value
+ * @return {!proto.nestlabs.gateway.v2.ObserveRequest} returns this
+ */
 proto.nestlabs.gateway.v2.ObserveRequest.prototype.setStateTypesListList = function(value) {
-  jspb.Message.setField(this, 1, value || []);
+  return jspb.Message.setField(this, 1, value || []);
 };
 
 
 /**
  * @param {number} value
  * @param {number=} opt_index
+ * @return {!proto.nestlabs.gateway.v2.ObserveRequest} returns this
  */
 proto.nestlabs.gateway.v2.ObserveRequest.prototype.addStateTypesList = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.nestlabs.gateway.v2.ObserveRequest} returns this
  */
 proto.nestlabs.gateway.v2.ObserveRequest.prototype.clearStateTypesListList = function() {
-  this.setStateTypesListList([]);
+  return this.setStateTypesListList([]);
 };
 
 
@@ -526,9 +537,12 @@ proto.nestlabs.gateway.v2.ObserveRequest.prototype.getTraitTypeParamsList = func
 };
 
 
-/** @param {!Array<!proto.nestlabs.gateway.v2.TraitTypeObserveParams>} value */
+/**
+ * @param {!Array<!proto.nestlabs.gateway.v2.TraitTypeObserveParams>} value
+ * @return {!proto.nestlabs.gateway.v2.ObserveRequest} returns this
+*/
 proto.nestlabs.gateway.v2.ObserveRequest.prototype.setTraitTypeParamsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -544,9 +558,10 @@ proto.nestlabs.gateway.v2.ObserveRequest.prototype.addTraitTypeParams = function
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.nestlabs.gateway.v2.ObserveRequest} returns this
  */
 proto.nestlabs.gateway.v2.ObserveRequest.prototype.clearTraitTypeParamsList = function() {
-  this.setTraitTypeParamsList([]);
+  return this.setTraitTypeParamsList([]);
 };
 
 
@@ -560,9 +575,12 @@ proto.nestlabs.gateway.v2.ObserveRequest.prototype.getTraitInstanceParamsList = 
 };
 
 
-/** @param {!Array<!proto.nestlabs.gateway.v2.TraitInstanceObserveParams>} value */
+/**
+ * @param {!Array<!proto.nestlabs.gateway.v2.TraitInstanceObserveParams>} value
+ * @return {!proto.nestlabs.gateway.v2.ObserveRequest} returns this
+*/
 proto.nestlabs.gateway.v2.ObserveRequest.prototype.setTraitInstanceParamsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -578,9 +596,10 @@ proto.nestlabs.gateway.v2.ObserveRequest.prototype.addTraitInstanceParams = func
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.nestlabs.gateway.v2.ObserveRequest} returns this
  */
 proto.nestlabs.gateway.v2.ObserveRequest.prototype.clearTraitInstanceParamsList = function() {
-  this.setTraitInstanceParamsList([]);
+  return this.setTraitInstanceParamsList([]);
 };
 
 
@@ -593,9 +612,12 @@ proto.nestlabs.gateway.v2.ObserveRequest.prototype.getUserId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.nestlabs.gateway.v2.ObserveRequest} returns this
+ */
 proto.nestlabs.gateway.v2.ObserveRequest.prototype.setUserId = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -735,17 +757,21 @@ proto.nestlabs.gateway.v2.TraitInstanceObserveParams.prototype.getTraitId = func
 };
 
 
-/** @param {?proto.nestlabs.gateway.v2.TraitId|undefined} value */
+/**
+ * @param {?proto.nestlabs.gateway.v2.TraitId|undefined} value
+ * @return {!proto.nestlabs.gateway.v2.TraitInstanceObserveParams} returns this
+*/
 proto.nestlabs.gateway.v2.TraitInstanceObserveParams.prototype.setTraitId = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.nestlabs.gateway.v2.TraitInstanceObserveParams} returns this
  */
 proto.nestlabs.gateway.v2.TraitInstanceObserveParams.prototype.clearTraitId = function() {
-  this.setTraitId(undefined);
+  return this.setTraitId(undefined);
 };
 
 
@@ -767,9 +793,12 @@ proto.nestlabs.gateway.v2.TraitInstanceObserveParams.prototype.getMonotonicVersi
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.nestlabs.gateway.v2.TraitInstanceObserveParams} returns this
+ */
 proto.nestlabs.gateway.v2.TraitInstanceObserveParams.prototype.setMonotonicVersionFiltersList = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -920,9 +949,12 @@ proto.nestlabs.gateway.v2.TraitTypeObserveParams.prototype.getTraitType = functi
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.nestlabs.gateway.v2.TraitTypeObserveParams} returns this
+ */
 proto.nestlabs.gateway.v2.TraitTypeObserveParams.prototype.setTraitType = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -936,17 +968,21 @@ proto.nestlabs.gateway.v2.TraitTypeObserveParams.prototype.getStateFieldMask = f
 };
 
 
-/** @param {?proto.nestlabs.gateway.v2.FieldMask|undefined} value */
+/**
+ * @param {?proto.nestlabs.gateway.v2.FieldMask|undefined} value
+ * @return {!proto.nestlabs.gateway.v2.TraitTypeObserveParams} returns this
+*/
 proto.nestlabs.gateway.v2.TraitTypeObserveParams.prototype.setStateFieldMask = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 2, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.nestlabs.gateway.v2.TraitTypeObserveParams} returns this
  */
 proto.nestlabs.gateway.v2.TraitTypeObserveParams.prototype.clearStateFieldMask = function() {
-  this.setStateFieldMask(undefined);
+  return this.setStateFieldMask(undefined);
 };
 
 
@@ -968,9 +1004,12 @@ proto.nestlabs.gateway.v2.TraitTypeObserveParams.prototype.getObserverSchemaVers
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.nestlabs.gateway.v2.TraitTypeObserveParams} returns this
+ */
 proto.nestlabs.gateway.v2.TraitTypeObserveParams.prototype.setObserverSchemaVersion = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -1102,26 +1141,31 @@ proto.nestlabs.gateway.v2.FieldMask.prototype.getPathsList = function() {
 };
 
 
-/** @param {!Array<string>} value */
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.nestlabs.gateway.v2.FieldMask} returns this
+ */
 proto.nestlabs.gateway.v2.FieldMask.prototype.setPathsList = function(value) {
-  jspb.Message.setField(this, 1, value || []);
+  return jspb.Message.setField(this, 1, value || []);
 };
 
 
 /**
  * @param {string} value
  * @param {number=} opt_index
+ * @return {!proto.nestlabs.gateway.v2.FieldMask} returns this
  */
 proto.nestlabs.gateway.v2.FieldMask.prototype.addPaths = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
 };
 
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.nestlabs.gateway.v2.FieldMask} returns this
  */
 proto.nestlabs.gateway.v2.FieldMask.prototype.clearPathsList = function() {
-  this.setPathsList([]);
+  return this.setPathsList([]);
 };
 
 
@@ -1313,9 +1357,12 @@ proto.nestlabs.gateway.v2.ObserveResponse.prototype.getResourceMetasList = funct
 };
 
 
-/** @param {!Array<!proto.nestlabs.gateway.v2.ResourceMeta>} value */
+/**
+ * @param {!Array<!proto.nestlabs.gateway.v2.ResourceMeta>} value
+ * @return {!proto.nestlabs.gateway.v2.ObserveResponse} returns this
+*/
 proto.nestlabs.gateway.v2.ObserveResponse.prototype.setResourceMetasList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
@@ -1331,9 +1378,10 @@ proto.nestlabs.gateway.v2.ObserveResponse.prototype.addResourceMetas = function(
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.nestlabs.gateway.v2.ObserveResponse} returns this
  */
 proto.nestlabs.gateway.v2.ObserveResponse.prototype.clearResourceMetasList = function() {
-  this.setResourceMetasList([]);
+  return this.setResourceMetasList([]);
 };
 
 
@@ -1346,9 +1394,12 @@ proto.nestlabs.gateway.v2.ObserveResponse.prototype.getInitialResourceMetasConti
 };
 
 
-/** @param {boolean} value */
+/**
+ * @param {boolean} value
+ * @return {!proto.nestlabs.gateway.v2.ObserveResponse} returns this
+ */
 proto.nestlabs.gateway.v2.ObserveResponse.prototype.setInitialResourceMetasContinue = function(value) {
-  jspb.Message.setProto3BooleanField(this, 2, value);
+  return jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -1362,9 +1413,12 @@ proto.nestlabs.gateway.v2.ObserveResponse.prototype.getTraitStatesList = functio
 };
 
 
-/** @param {!Array<!proto.nestlabs.gateway.v2.TraitState>} value */
+/**
+ * @param {!Array<!proto.nestlabs.gateway.v2.TraitState>} value
+ * @return {!proto.nestlabs.gateway.v2.ObserveResponse} returns this
+*/
 proto.nestlabs.gateway.v2.ObserveResponse.prototype.setTraitStatesList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 3, value);
+  return jspb.Message.setRepeatedWrapperField(this, 3, value);
 };
 
 
@@ -1380,9 +1434,10 @@ proto.nestlabs.gateway.v2.ObserveResponse.prototype.addTraitStates = function(op
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.nestlabs.gateway.v2.ObserveResponse} returns this
  */
 proto.nestlabs.gateway.v2.ObserveResponse.prototype.clearTraitStatesList = function() {
-  this.setTraitStatesList([]);
+  return this.setTraitStatesList([]);
 };
 
 
@@ -1396,9 +1451,12 @@ proto.nestlabs.gateway.v2.ObserveResponse.prototype.getTraitOperationListsList =
 };
 
 
-/** @param {!Array<!proto.nestlabs.gateway.v2.TraitOperationList>} value */
+/**
+ * @param {!Array<!proto.nestlabs.gateway.v2.TraitOperationList>} value
+ * @return {!proto.nestlabs.gateway.v2.ObserveResponse} returns this
+*/
 proto.nestlabs.gateway.v2.ObserveResponse.prototype.setTraitOperationListsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -1414,9 +1472,10 @@ proto.nestlabs.gateway.v2.ObserveResponse.prototype.addTraitOperationLists = fun
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.nestlabs.gateway.v2.ObserveResponse} returns this
  */
 proto.nestlabs.gateway.v2.ObserveResponse.prototype.clearTraitOperationListsList = function() {
-  this.setTraitOperationListsList([]);
+  return this.setTraitOperationListsList([]);
 };
 
 
@@ -1430,17 +1489,21 @@ proto.nestlabs.gateway.v2.ObserveResponse.prototype.getCurrentTime = function() 
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Timestamp|undefined} value
+ * @return {!proto.nestlabs.gateway.v2.ObserveResponse} returns this
+*/
 proto.nestlabs.gateway.v2.ObserveResponse.prototype.setCurrentTime = function(value) {
-  jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.nestlabs.gateway.v2.ObserveResponse} returns this
  */
 proto.nestlabs.gateway.v2.ObserveResponse.prototype.clearCurrentTime = function() {
-  this.setCurrentTime(undefined);
+  return this.setCurrentTime(undefined);
 };
 
 
@@ -1599,17 +1662,21 @@ proto.nestlabs.gateway.v2.TraitOperationList.prototype.getTraitId = function() {
 };
 
 
-/** @param {?proto.nestlabs.gateway.v2.TraitId|undefined} value */
+/**
+ * @param {?proto.nestlabs.gateway.v2.TraitId|undefined} value
+ * @return {!proto.nestlabs.gateway.v2.TraitOperationList} returns this
+*/
 proto.nestlabs.gateway.v2.TraitOperationList.prototype.setTraitId = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.nestlabs.gateway.v2.TraitOperationList} returns this
  */
 proto.nestlabs.gateway.v2.TraitOperationList.prototype.clearTraitId = function() {
-  this.setTraitId(undefined);
+  return this.setTraitId(undefined);
 };
 
 
@@ -1632,9 +1699,12 @@ proto.nestlabs.gateway.v2.TraitOperationList.prototype.getTraitOperationsList = 
 };
 
 
-/** @param {!Array<!proto.nestlabs.gateway.v2.TraitOperation>} value */
+/**
+ * @param {!Array<!proto.nestlabs.gateway.v2.TraitOperation>} value
+ * @return {!proto.nestlabs.gateway.v2.TraitOperationList} returns this
+*/
 proto.nestlabs.gateway.v2.TraitOperationList.prototype.setTraitOperationsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
 };
 
 
@@ -1650,9 +1720,10 @@ proto.nestlabs.gateway.v2.TraitOperationList.prototype.addTraitOperations = func
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.nestlabs.gateway.v2.TraitOperationList} returns this
  */
 proto.nestlabs.gateway.v2.TraitOperationList.prototype.clearTraitOperationsList = function() {
-  this.setTraitOperationsList([]);
+  return this.setTraitOperationsList([]);
 };
 
 
@@ -1939,9 +2010,12 @@ proto.nestlabs.gateway.v2.ResourceMeta.prototype.getResourceId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.nestlabs.gateway.v2.ResourceMeta} returns this
+ */
 proto.nestlabs.gateway.v2.ResourceMeta.prototype.setResourceId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1954,9 +2028,12 @@ proto.nestlabs.gateway.v2.ResourceMeta.prototype.getType = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.nestlabs.gateway.v2.ResourceMeta} returns this
+ */
 proto.nestlabs.gateway.v2.ResourceMeta.prototype.setType = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1970,9 +2047,12 @@ proto.nestlabs.gateway.v2.ResourceMeta.prototype.getTraitMetasList = function() 
 };
 
 
-/** @param {!Array<!proto.nestlabs.gateway.v2.TraitMeta>} value */
+/**
+ * @param {!Array<!proto.nestlabs.gateway.v2.TraitMeta>} value
+ * @return {!proto.nestlabs.gateway.v2.ResourceMeta} returns this
+*/
 proto.nestlabs.gateway.v2.ResourceMeta.prototype.setTraitMetasList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 4, value);
+  return jspb.Message.setRepeatedWrapperField(this, 4, value);
 };
 
 
@@ -1988,9 +2068,10 @@ proto.nestlabs.gateway.v2.ResourceMeta.prototype.addTraitMetas = function(opt_va
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.nestlabs.gateway.v2.ResourceMeta} returns this
  */
 proto.nestlabs.gateway.v2.ResourceMeta.prototype.clearTraitMetasList = function() {
-  this.setTraitMetasList([]);
+  return this.setTraitMetasList([]);
 };
 
 
@@ -2003,9 +2084,12 @@ proto.nestlabs.gateway.v2.ResourceMeta.prototype.getSchemaVersion = function() {
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.nestlabs.gateway.v2.ResourceMeta} returns this
+ */
 proto.nestlabs.gateway.v2.ResourceMeta.prototype.setSchemaVersion = function(value) {
-  jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -2019,9 +2103,12 @@ proto.nestlabs.gateway.v2.ResourceMeta.prototype.getIfaceMetasList = function() 
 };
 
 
-/** @param {!Array<!proto.nestlabs.gateway.v2.IfaceMeta>} value */
+/**
+ * @param {!Array<!proto.nestlabs.gateway.v2.IfaceMeta>} value
+ * @return {!proto.nestlabs.gateway.v2.ResourceMeta} returns this
+*/
 proto.nestlabs.gateway.v2.ResourceMeta.prototype.setIfaceMetasList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 7, value);
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
@@ -2037,9 +2124,10 @@ proto.nestlabs.gateway.v2.ResourceMeta.prototype.addIfaceMetas = function(opt_va
 
 /**
  * Clears the list making it empty but non-null.
+ * @return {!proto.nestlabs.gateway.v2.ResourceMeta} returns this
  */
 proto.nestlabs.gateway.v2.ResourceMeta.prototype.clearIfaceMetasList = function() {
-  this.setIfaceMetasList([]);
+  return this.setIfaceMetasList([]);
 };
 
 
@@ -2205,17 +2293,21 @@ proto.nestlabs.gateway.v2.TraitState.prototype.getTraitId = function() {
 };
 
 
-/** @param {?proto.nestlabs.gateway.v2.TraitId|undefined} value */
+/**
+ * @param {?proto.nestlabs.gateway.v2.TraitId|undefined} value
+ * @return {!proto.nestlabs.gateway.v2.TraitState} returns this
+*/
 proto.nestlabs.gateway.v2.TraitState.prototype.setTraitId = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.nestlabs.gateway.v2.TraitState} returns this
  */
 proto.nestlabs.gateway.v2.TraitState.prototype.clearTraitId = function() {
-  this.setTraitId(undefined);
+  return this.setTraitId(undefined);
 };
 
 
@@ -2238,17 +2330,21 @@ proto.nestlabs.gateway.v2.TraitState.prototype.getPatch = function() {
 };
 
 
-/** @param {?proto.nestlabs.gateway.v2.Patch|undefined} value */
+/**
+ * @param {?proto.nestlabs.gateway.v2.Patch|undefined} value
+ * @return {!proto.nestlabs.gateway.v2.TraitState} returns this
+*/
 proto.nestlabs.gateway.v2.TraitState.prototype.setPatch = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.nestlabs.gateway.v2.TraitState} returns this
  */
 proto.nestlabs.gateway.v2.TraitState.prototype.clearPatch = function() {
-  this.setPatch(undefined);
+  return this.setPatch(undefined);
 };
 
 
@@ -2270,9 +2366,12 @@ proto.nestlabs.gateway.v2.TraitState.prototype.getMonotonicVersion = function() 
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.nestlabs.gateway.v2.TraitState} returns this
+ */
 proto.nestlabs.gateway.v2.TraitState.prototype.setMonotonicVersion = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -2285,9 +2384,12 @@ proto.nestlabs.gateway.v2.TraitState.prototype.getPublisherVersion = function() 
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.nestlabs.gateway.v2.TraitState} returns this
+ */
 proto.nestlabs.gateway.v2.TraitState.prototype.setPublisherVersion = function(value) {
-  jspb.Message.setProto3IntField(this, 5, value);
+  return jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
@@ -2438,9 +2540,12 @@ proto.nestlabs.gateway.v2.TraitMeta.prototype.getTraitLabel = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.nestlabs.gateway.v2.TraitMeta} returns this
+ */
 proto.nestlabs.gateway.v2.TraitMeta.prototype.setTraitLabel = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2453,9 +2558,12 @@ proto.nestlabs.gateway.v2.TraitMeta.prototype.getType = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.nestlabs.gateway.v2.TraitMeta} returns this
+ */
 proto.nestlabs.gateway.v2.TraitMeta.prototype.setType = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2469,17 +2577,21 @@ proto.nestlabs.gateway.v2.TraitMeta.prototype.getSchemaVersion = function() {
 };
 
 
-/** @param {?proto.nestlabs.gateway.v2.SchemaVersion|undefined} value */
+/**
+ * @param {?proto.nestlabs.gateway.v2.SchemaVersion|undefined} value
+ * @return {!proto.nestlabs.gateway.v2.TraitMeta} returns this
+*/
 proto.nestlabs.gateway.v2.TraitMeta.prototype.setSchemaVersion = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.nestlabs.gateway.v2.TraitMeta} returns this
  */
 proto.nestlabs.gateway.v2.TraitMeta.prototype.clearSchemaVersion = function() {
-  this.setSchemaVersion(undefined);
+  return this.setSchemaVersion(undefined);
 };
 
 
@@ -2625,9 +2737,12 @@ proto.nestlabs.gateway.v2.TraitId.prototype.getResourceId = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.nestlabs.gateway.v2.TraitId} returns this
+ */
 proto.nestlabs.gateway.v2.TraitId.prototype.setResourceId = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2640,9 +2755,12 @@ proto.nestlabs.gateway.v2.TraitId.prototype.getTraitLabel = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.nestlabs.gateway.v2.TraitId} returns this
+ */
 proto.nestlabs.gateway.v2.TraitId.prototype.setTraitLabel = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2729,7 +2847,7 @@ proto.nestlabs.gateway.v2.IfaceMeta.deserializeBinaryFromReader = function(msg, 
     case 3:
       var value = msg.getTraitLabelMappingMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
     case 4:
@@ -2804,9 +2922,12 @@ proto.nestlabs.gateway.v2.IfaceMeta.prototype.getIfaceLabel = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.nestlabs.gateway.v2.IfaceMeta} returns this
+ */
 proto.nestlabs.gateway.v2.IfaceMeta.prototype.setIfaceLabel = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+  return jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2819,9 +2940,12 @@ proto.nestlabs.gateway.v2.IfaceMeta.prototype.getType = function() {
 };
 
 
-/** @param {string} value */
+/**
+ * @param {string} value
+ * @return {!proto.nestlabs.gateway.v2.IfaceMeta} returns this
+ */
 proto.nestlabs.gateway.v2.IfaceMeta.prototype.setType = function(value) {
-  jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2840,10 +2964,11 @@ proto.nestlabs.gateway.v2.IfaceMeta.prototype.getTraitLabelMappingMap = function
 
 /**
  * Clears values from the map. The map will be non-null.
+ * @return {!proto.nestlabs.gateway.v2.IfaceMeta} returns this
  */
 proto.nestlabs.gateway.v2.IfaceMeta.prototype.clearTraitLabelMappingMap = function() {
   this.getTraitLabelMappingMap().clear();
-};
+  return this;};
 
 
 /**
@@ -2856,17 +2981,21 @@ proto.nestlabs.gateway.v2.IfaceMeta.prototype.getSchemaVersion = function() {
 };
 
 
-/** @param {?proto.nestlabs.gateway.v2.SchemaVersion|undefined} value */
+/**
+ * @param {?proto.nestlabs.gateway.v2.SchemaVersion|undefined} value
+ * @return {!proto.nestlabs.gateway.v2.IfaceMeta} returns this
+*/
 proto.nestlabs.gateway.v2.IfaceMeta.prototype.setSchemaVersion = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.nestlabs.gateway.v2.IfaceMeta} returns this
  */
 proto.nestlabs.gateway.v2.IfaceMeta.prototype.clearSchemaVersion = function() {
-  this.setSchemaVersion(undefined);
+  return this.setSchemaVersion(undefined);
 };
 
 
@@ -3003,17 +3132,21 @@ proto.nestlabs.gateway.v2.Patch.prototype.getValues = function() {
 };
 
 
-/** @param {?proto.google.protobuf.Any|undefined} value */
+/**
+ * @param {?proto.google.protobuf.Any|undefined} value
+ * @return {!proto.nestlabs.gateway.v2.Patch} returns this
+*/
 proto.nestlabs.gateway.v2.Patch.prototype.setValues = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
+  return jspb.Message.setWrapperField(this, 1, value);
 };
 
 
 /**
  * Clears the message field making it undefined.
+ * @return {!proto.nestlabs.gateway.v2.Patch} returns this
  */
 proto.nestlabs.gateway.v2.Patch.prototype.clearValues = function() {
-  this.setValues(undefined);
+  return this.setValues(undefined);
 };
 
 
@@ -3159,9 +3292,12 @@ proto.nestlabs.gateway.v2.SchemaVersion.prototype.getCurrentVersion = function()
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.nestlabs.gateway.v2.SchemaVersion} returns this
+ */
 proto.nestlabs.gateway.v2.SchemaVersion.prototype.setCurrentVersion = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -3174,9 +3310,12 @@ proto.nestlabs.gateway.v2.SchemaVersion.prototype.getMinCompatVersion = function
 };
 
 
-/** @param {number} value */
+/**
+ * @param {number} value
+ * @return {!proto.nestlabs.gateway.v2.SchemaVersion} returns this
+ */
 proto.nestlabs.gateway.v2.SchemaVersion.prototype.setMinCompatVersion = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 

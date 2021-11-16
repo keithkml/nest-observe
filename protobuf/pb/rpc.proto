@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+
+package nest.rpc;
+
+message Status {
+    // The status code, which should be an enum value of [google.rpc.Code][].
+    int32 code = 1;
+  
+    // A developer-facing error message, which should be in English. Any
+    // user-facing error message should be localized and sent in the
+    // [google.rpc.Status.details][] field, or localized by the client.
+    string message = 2;
+  
+    // A list of messages that carry the error details.  There will be a
+    // common set of message types for APIs to use.
+    repeated google.protobuf.Any details = 3;
+  }
